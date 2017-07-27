@@ -8,6 +8,10 @@
 	<div class="col-sm-4"></div>
 </div>
 
+<input type="text" ng-change="getMessages()" ng-model="search" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Filter Messages">
+
+<br/>
+
 <div class="panel panel-info" ng-repeat="message in messages">
 	<div class="panel-heading">{{message.name}}</div>
 	<div class="panel-body">{{message.content}}</div>

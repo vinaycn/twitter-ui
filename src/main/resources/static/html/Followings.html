@@ -2,7 +2,7 @@
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
 		<p>
-			<span style="font-size: larger;" class="label label-danger">Followings</span>
+			<span style="font-size: larger;" class="label label-danger">{{name}} Followings</span>
 		</p>
 	</div>
 	<div class="col-sm-4"></div>
@@ -19,7 +19,7 @@
 	<div class="panel-body">
 		<p>@ {{ f.handle }}</p>
 		<div class="btn-group pull-right">
-			<div class="btn">
+			<div class="btn btn-md">
 				<span ng-click="unfollow(f.personId)" class="label label-primary">Unfollow</span>
 			</div>
 		</div>

@@ -5,11 +5,13 @@
 
 app.controller('followers', ['$scope', 'UserIdService','followersService', function($scope, UserIdService, followersService){
 	$scope.userId = UserIdService.uid;
+	$scope.name = UserIdService.name;
 	$scope.load = function(){	
 		$scope.getPersonFollowers($scope.userId);
 	};
 	
 	$scope.followers = [];
+	
 	
 	$scope.getPersonFollowers = function(id){
 		followersService.getFollowers(id,function(response){
@@ -22,13 +24,21 @@ app.controller('followers', ['$scope', 'UserIdService','followersService', funct
 		followersService.follow($scope.userId,idt,function(response){
 			if(response.status==201){
 				$scope.getPersonFollowers($scope.userId);
+			}else{
+				alert("Sorry Something went wrong! Cant process your request");
+				$scope.getPersonFollowers($scope.userId);
 			}
+			
 		});
 	};
 	
 	$scope.unfollow = function(idt){
 		followersService.unfollow($scope.userId,idt,function(response){
 			if(response.status==204){
+				$scope.getPersonFollowers($scope.userId);
+			}
+			else{
+				alert("Sorry Something went wrong! Cant process your request");
 				$scope.getPersonFollowers($scope.userId);
 			}
 		});

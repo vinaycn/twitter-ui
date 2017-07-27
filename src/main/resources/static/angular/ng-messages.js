@@ -10,11 +10,12 @@
 
 app.controller('message', ['$scope', 'UserIdService','messagesService', function($scope, UserIdService, messagesService){
 	$scope.userId = UserIdService.uid;
+	$scope.name = UserIdService.name;
 	$scope.load = function(){	
 		$scope.getMessages();
 	};
 	
-	$scope.name = UserIdService.name;
+	
 	$scope.search;
 	$scope.getMessages = function(){
 		messagesService.getMessages($scope.userId,$scope.search, function(response){

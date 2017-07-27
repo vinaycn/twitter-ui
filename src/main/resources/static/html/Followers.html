@@ -2,38 +2,13 @@
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
 		<p>
-			<span style="font-size: larger;" class="label label-danger">Followers</span>
+			<span style="font-size: larger;" class="label label-danger">{{name}} Followers</span>
 		</p>
 	</div>
 	<div class="col-sm-4"></div>
 </div>
 
-<!-- <div ng-repeat="f in followers" class="row">
-	<div class="col-sm-4"></div>
-	<div class="col-sm-4">
-		<div class="row" style="border: 1px solid #ccc; padding: 5px;">
-			<div class="col-xs-9">
-				<p>
-					<strong>{{ f.name }}</strong>
-				</p>
-				<p>@ {{ f.handle }}</p>
-			</div>
-			<div class="col-xs-3">
-				<div ng-if="f.followFlag == 'U'">
-					<div class="btn">
-						<span ng-click="unfollow(f.personId)" class="label label-primary">Unfollow</span>
-					</div>
-				</div>
-				<div ng-if="f.followFlag == 'F'">
-					<div class="btn">
-						<span ng-click="follow(f.personId)" class="label label-primary">Follow</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-4"></div>
-</div> -->
+
 
 <div class="panel panel-primary" ng-repeat="f in followers">
 	<div class="panel-heading clearfix">
@@ -43,12 +18,12 @@
 		<p>@ {{ f.handle }}</p>
 		<div class="btn-group pull-right">
 			<div ng-if="f.followFlag == 'U'">
-				<div class="btn">
+				<div class="btn btn-md">
 					<span ng-click="unfollow(f.personId)" class="label label-primary">Unfollow</span>
 				</div>
 			</div>
 			<div ng-if="f.followFlag == 'F'">
-				<div class="btn">
+				<div class="btn btn-md">
 					<span ng-click="follow(f.personId)" class="label label-primary">Follow</span>
 				</div>
 			</div>

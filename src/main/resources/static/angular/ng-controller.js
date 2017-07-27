@@ -88,7 +88,7 @@ app.service('peopleService',['$http','$base64',function($http,$base64){
     $http.defaults.headers.common['Authorization'] = 'Basic ' + auth;
 	
 	this.getPeople = function(callBack){
-		alert("getting all people service");
+		
 		var svcUrl = 'https://api-twitter-messenger.herokuapp.com/people';
 			$http({
 				url : svcUrl,

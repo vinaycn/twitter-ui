@@ -5,6 +5,7 @@
 
 app.controller('following', ['$scope', 'UserIdService','followingService', function($scope, UserIdService, followingService){
 	$scope.userId = UserIdService.uid;
+	$scope.name = UserIdService.name;
 	$scope.load = function(){	
 		$scope.getFollowing($scope.userId);
 	};
@@ -19,6 +20,10 @@ app.controller('following', ['$scope', 'UserIdService','followingService', funct
 	$scope.unfollow = function(idt){
 		followingService.unfollow($scope.userId,idt, function(response){
 			if(response.status==204){
+				$scope.getFollowing($scope.userId);
+			}
+			else{
+				alert("Sorry Something went wrong! Cant process your request");
 				$scope.getFollowing($scope.userId);
 			}
 			

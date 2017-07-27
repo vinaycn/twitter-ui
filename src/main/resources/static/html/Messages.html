@@ -1,0 +1,14 @@
+<div class="row" ng-init="load()">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<p>
+			<span style="font-size: larger;" class="label label-danger">{{name}} Messages</span>
+		</p>
+	</div>
+	<div class="col-sm-4"></div>
+</div>
+
+<div class="panel panel-info" ng-repeat="message in messages">
+	<div class="panel-heading">{{message.name}}</div>
+	<div class="panel-body">{{message.content}}</div>
+</div>

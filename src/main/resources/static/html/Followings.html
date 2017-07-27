@@ -1,0 +1,23 @@
+<div class="row" ng-init = "load()">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<p><span style="font-size: larger;" class="label label-danger">Followings</span></p>
+</div>        
+<div class="col-sm-4"></div>        
+</div>  
+
+<div class="row" ng-repeat="person in following">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+        <div class="row" style="border:1px solid #ccc; padding: 5px;">
+       		<div class="col-xs-9">
+       			<p><strong>{{person.name}}</strong></p>
+       			<p>@{{person.handle}}</p>
+       		</div>
+       		<div>
+       			<div class="btn"><span ng-click="unfollow(person.personId)" class="label label-primary">Unfollow</span></div>
+       		</div>
+        </div>
+</div>        
+<div class="col-sm-4"></div>        
+</div>  

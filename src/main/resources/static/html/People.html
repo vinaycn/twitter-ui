@@ -1,0 +1,8 @@
+
+<div class="row" ng-init = "load()"></div>
+ 
+<div class="panel panel-primary" ng-repeat = "person in people">
+	<div class="panel-heading"> <h2>Name: {{person.name}}</h2></div>
+	<div class="panel-body"><h4>Handle: @{{person.handle}}</h4></div>
+	<a href="#/my-profile" ng-click="sendUserId(person)" class="btn btn-primary btn-lg">View Profile</a>
+</div>    

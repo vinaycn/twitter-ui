@@ -74,7 +74,7 @@ app.service('followersService', ['$http','$base64', function($http, $base64){
 			}).then(function(response) {
 				callBack(response);
 			}, function(failure) {
-				console.log(failure);
+				callBack(failure);
 			});
 		};	
 		
@@ -87,7 +87,7 @@ app.service('followersService', ['$http','$base64', function($http, $base64){
 			}).then(function(response) {
 				callBack(response);
 			}, function(failure) {
-				console.log(failure);
+				callBack(failure);
 			});
 		};	
 	

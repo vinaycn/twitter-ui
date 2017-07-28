@@ -11,7 +11,10 @@ app.controller('profile', ['$scope', 'UserIdService','profileService', function(
 	
 	$scope.getPersonProfile = function(id){
 		profileService.getPersonProfile(id,function(response){
-			$scope.person = response.data;
+			if(response.status==200)
+			    $scope.person = response.data;
+			else
+				alert("Something Went wrong please try again later.")
 		});
 	}
 }]);
@@ -35,7 +38,7 @@ app.service('profileService',['$http','$base64',function($http,$base64){
 			}).then(function(response) {
 				callBack(response);
 			}, function(failure) {
-				console.log(failure);
+				callBack(failure);
 			});
 		};	
 	

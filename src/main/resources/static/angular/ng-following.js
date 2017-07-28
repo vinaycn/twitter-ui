@@ -46,7 +46,7 @@ app.service('followingService', ['$http','$base64', function($http, $base64){
 				console.log(response);
 				callBack(response);
 			}, function(failure) {
-				alert("Can not retrieve following")
+				callBack(failure);
 			});
 		};
 		
@@ -59,7 +59,7 @@ app.service('followingService', ['$http','$base64', function($http, $base64){
 				}).then(function(response) {
 					callBack(response);
 				}, function(failure) {
-					console.log(failure);
+					callBack(failure);
 				});
 			};	
 	

@@ -40,10 +40,11 @@ app.service('messagesService', ['$http','$base64', function($http, $base64){
 				params: {search: search},
 				method : 'GET',
 			}).then(function(response) {
-				console.log(response);
+				
 				callBack(response);
 			}, function(failure) {
-				alert("Can not retrieve messages")
+				callBack(failure);
+				
 			});
 		};	
 	

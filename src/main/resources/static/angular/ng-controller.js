@@ -35,11 +35,6 @@ app.config(['$routeProvider', function($routeProvider){
 		controller: 'following',
 		caseInsensitiveMatch: true
 	})
-	.when('/others', {
-		templateUrl: 'html/Others.html',
-		controller: 'others',
-		caseInsensitiveMatch: true
-	})
 	.otherwise({
 		template: '<strong>No content available here..click one of the links from left panel</strong>'
 	});
@@ -96,7 +91,7 @@ app.service('peopleService',['$http','$base64',function($http,$base64){
 			}).then(function(response) {
 				callBack(response);
 			}, function(failure) {
-				console.log(failure);
+				callBack(failure);
 			});
 		};	
 	

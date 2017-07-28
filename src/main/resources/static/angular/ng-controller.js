@@ -31,12 +31,12 @@ app.config(['$routeProvider', function($routeProvider){
 		caseInsensitiveMatch: true
 	})
 	.when('/followings', {
-		templateUrl: 'html/Followings.html',
+		templateUrl: 'html/Following.html',
 		controller: 'following',
 		caseInsensitiveMatch: true
 	})
 	.otherwise({
-		template: '<strong>No content available here..click one of the links from left panel</strong>'
+		redirectTo: '/'
 	});
 }]);
 

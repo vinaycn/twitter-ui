@@ -1,4 +1,4 @@
-package com.vinay.twitterclient.controller;
+package com.me.twitterclient.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
